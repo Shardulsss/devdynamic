@@ -38,7 +38,8 @@ const useStyles = makeStyles((theme)=>({
     },
     brand:{
         paddingTop:0
-    }
+    },
+    
     
 }))
 
@@ -47,7 +48,7 @@ const Footer = () => {
     const checked = useWindowPosition({id:'header',val:2.1})
     const classes= useStyles()
     return (
-        <div className={classes.outerdiv} >
+        <div name="contact" className={classes.outerdiv} >
             
             <div>
                 <Typography variant="h4" gutterBottom align="center">
@@ -58,21 +59,21 @@ const Footer = () => {
                 </Typography>
             </div>
             <Container maxWidth="sm" className={classes.container}>
-                <Grid container  justify="center">
+                <Grid container justify="center">
                     <Grid container spacing={5} xs={12} justify='center' className={classes.container2}>
                         
                         <Grid item>
                             <MdEmail size={30}/>   
                         </Grid>
-                        <Grid item><h6>piyushshinde285@gmail.com</h6></Grid>
+                        <Grid item><h5>devdynamic.tk@gmail.com</h5></Grid>
                         
                     </Grid>
                     
                     
                     <Grid container spacing={5} xs={12} justify="center" className={classes.container3}>
-                        <Grid item><Link to="/github"><FaGithub size={35}/></Link></Grid>
-                        <Grid item><FaLinkedin size={35} /> </Grid>
-                        <Grid item><FaInstagram size={35} /> </Grid>
+                        <Grid item><Link to="/github" target="_blank"><FaGithub color="#364547" size={35}/></Link></Grid>
+                        <Grid item><Link to="/linkedin" target="_blank"><FaLinkedin size={35} /></Link> </Grid>
+                        <Grid item><Link to="/insta" target="_blank"><FaInstagram color="#ca8a8b" size={35} /></Link> </Grid>
                     </Grid>
                     
                     <Grid container spacing={5} xs={12} justify="center" className={classes.logo} >
@@ -83,7 +84,7 @@ const Footer = () => {
                         </Grid>
                     </Grid>
                     <Grid container spacing={5} xs={12} justify="center" className={classes.brand}>
-                        <Grid item  name="contact"><Typography variant="h4">DevDynamics</Typography></Grid>
+                        <Grid item  ><Typography variant="h4">DevDynamics</Typography></Grid>
                     </Grid>
                     
                 </Grid>

@@ -139,7 +139,7 @@ const Logo = styled.img`
 `
 
 
-const Navbar = (props)=>{
+const Navbar2 = (props)=>{
     const goToTop = ()=>{
         scroll.scrollToTop();
     }
@@ -154,17 +154,13 @@ const Navbar = (props)=>{
                     <MobileIcons onClick={props.toggle}><FaBars /></MobileIcons>
                     <NavMenu>
                         <NavItem>
-                            <NavLinks to="about" smooth={true} speed={500} spy={true} exact='true' offset={-80}>About</NavLinks>
+                            <NavLinkR to="/" >Home</NavLinkR>
                         </NavItem>
-                        <NavItem>
-                            <NavLinks to="whatwedo" smooth={true} speed={500} spy={true} exact='true' offset={-80}>What We Do</NavLinks>
-                        </NavItem>
-                        <NavItem>
-                            <NavLinks to="contact" smooth={true} speed={500} spy={true} exact='true' offset={-80}>Contact Us</NavLinks>
-                        </NavItem>
+                        
                         <NavItem>
                             <NavLinkR to="/projects">Projects</NavLinkR>
                         </NavItem>
+                        
                         <NavItem>
                             <NavLinkR to="/blogs">Blogs</NavLinkR>
                         </NavItem>
@@ -176,5 +172,5 @@ const Navbar = (props)=>{
     );
 }
 
-export default Navbar;
+export default Navbar2;
 

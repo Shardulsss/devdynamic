@@ -4,6 +4,7 @@ import Aboutus from './aboutus.js';
 import AboutusRes from './aboutusres.js';
 import Homevid from './homevid.js';
 import Footer from './footer.js';
+import NavbarMain from '../pages/navbarmain.js';
 
 import styled from 'styled-components'
 
@@ -26,6 +27,7 @@ const Home = () => {
    
 
     return (<div>
+        <NavbarMain />
         <Homevid />
         <ResDiv>
             <Aboutus />

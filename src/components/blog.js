@@ -1,83 +1,96 @@
-import {useState} from 'react';
-import {Link} from 'react-router-dom';
-import styled from 'styled-components';
+import {useState, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
+import sanityClient from '../sanityclient.js';
+// import imageUrlBuilder from '@sanity/image-url';
+import BlockContent from '@sanity/block-content-to-react';
+import {makeStyles, Typography, Container} from '@material-ui/core';
+// const builder = imageUrlBuilder(sanityClient);
+// function urlFor(source){
+//     return builder.image(source)
+// }
 
-const OutBlog = styled.div`
-    box-shadow: 0px 0px 5px 0px;
-    padding -bottom:30px;
-    width:1160px;
-    padding-right: 60px;
-    
-    
-    margin-left:90px;
-    margin-bottom:30px
-`
+const useStyles = makeStyles((theme)=>({
+    outerdiv:{
+        justifyContent:'center',
+        alignContent: 'center',
+        background: '#95a5a6',
+        padding:35
+    },
+    mainimage:{
+        height:300,
+        width:450,
+        border:"solid 10px",
 
-const Blogdiv = styled.div`
-    display:flex;
-    align-items:center;
-    
-    
-`
-const Title = styled.div`
-    overflow:hidden;
-    text-align:center;
-`
-
-const Content = styled.div`
-    overflow:hidden;
-    align-items:center;
-    height:150px
-`
-const Content_data = styled.div`
-    text-align:center;
-    width:700px;
-`   
-
-const Blog = (props)=>{
-
-    const [readMore, setReadMore] = useState(false)
-
-
-
-    const handleReadMore = () =>{
-        setReadMore(true)
+    },
+    content:{
+        padding:60
     }
 
-    const handleReadLess = () =>{
-        setReadMore(false)
+}))
+
+
+
+const Blog = () =>{
+    const [blog,setBlog] = useState(null);
+    const {slug } = useParams();
+
+    
+    const classes = useStyles()
+
+    useEffect(() => {
+        sanityClient.fetch(`*[slug.current == "${slug}"]{
+            title,
+            _id,
+            slug,
+            mainImage{
+                asset->{
+                    _id,
+                    url
+                }
+            },
+            body,
+            "authorname":author->name
+        }`).then((data)=>setBlog(data[0])).catch(console.error)
+    
+    
+    
+    
+    
+    }, [slug])
+    
+
+    if(!blog){
+        return (<div className={classes.outerdiv}>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h3>Loading....</h3>
+            
+            </div>)
     }
+    return (<div className={classes.outerdiv}>
+        <br></br>
+        <br></br>
 
-    return (
-        <div>
-        <OutBlog>
-            <Blogdiv>
-                <div className="blog-img-container" >
-                    <img src="https://wallpaperaccess.com/full/2040750.jpg"></img>
+        <Container justifyContent="center" align="center">
+            
+            <img src={blog.mainImage.asset.url} className={classes.mainimage}></img>
+            <Container justifyContent="center" align="left" className={classes.content}>
+                <div style={{display:"flex", justifyContent:"space-between"}}>
+                    <Typography variant="h4" gutterBottom>
+                        {blog.title}
+                    </Typography>
+                    <Typography variant="h6" align="right" color="textSecondary" gutterBottom>
+                        author: {blog.authorname}
+                    </Typography>
                 </div>
-                <div>
-                    <Title><h2>{props.post.title}</h2></Title>
-                    
-                    <Content>
-                        <Content_data><p>{props.post.content}</p></Content_data>
-                        
-                    </Content>
-                </div>
+                <BlockContent blocks={blog.body} projectId="83qyp24l" dataset="production"></BlockContent>
+            </Container>
+            
+        </Container>
 
-                {!readMore && <button onClick={handleReadMore}>read more</button>}
-                
-                
-               
-            </Blogdiv>
-            {readMore && <div>
-                <Content_data>{props.post.content}</Content_data>
-                <button onClick={handleReadLess}>read less</button>
-                </div>
-            }
-        </OutBlog>
-        </div>
-        
-    );
+        </div>)
 }
 
-export default Blog;
+export default Blog

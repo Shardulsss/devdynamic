@@ -91,7 +91,7 @@ const Sidebarmenu = styled.ul`
 `
 
 
-const Sidebar = (props) => {
+const Sidebar2 = (props) => {
     return (
         <div>
             <SidebarContainer isOpen={props.isOpen} onClick={props.toggle}>
@@ -100,15 +100,10 @@ const Sidebar = (props) => {
                 </Icon>
                 <Sidebarwrap>
                     <Sidebarmenu>
-                        <Sidebarlink onClick={props.toggle} to="aboutusres">
-                            About
-                        </Sidebarlink>
-                        <Sidebarlink onClick={props.toggle} to="whatwedo">
-                            What We Do
-                        </Sidebarlink>
-                        <Sidebarlink onClick={props.toggle} to="contact">
-                            Contact Us
-                        </Sidebarlink>
+                        <SidelinkR onClick={props.toggle} to="/">
+                            Home
+                        </SidelinkR>
+                        
                         <SidelinkR onClick={props.toggle} to="/projects">
                             Projects
                         </SidelinkR>
@@ -123,4 +118,4 @@ const Sidebar = (props) => {
     )
 }
 
-export default Sidebar
+export default Sidebar2

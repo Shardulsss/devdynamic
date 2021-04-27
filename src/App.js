@@ -1,28 +1,34 @@
 // import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Blogs from './components/blogs'
-import Contact from '../src/components/contact'
+import Projects from './components/projects'
+import Blog from './components/blog'
 import Home from '../src/components/home'
 import WhatWeDo from './components/whatwedo.js'
-import WriteBlog from '../src/components/writeBlog'
+import Footer from './components/footer.js'
+import AboutusRes from './components/aboutusres.js'
 
 //pages
 import Navbarmain from './pages/navbarmain'
 import Aboutus from './components/aboutus';
 
 function App() {
+
   return (
     <BrowserRouter>
-      <Navbarmain />
       <div>
         <Switch>
           <Route exact path="/"><Home /></Route>
           <Route exact path="/about"><Aboutus/></Route>
+          <Route exact path="/aboutusres"><AboutusRes/></Route>
           <Route exact path="/whatwedo"><WhatWeDo /></Route>
-          <Route exact path="/contact"><Contact /></Route>
+          <Route exact path="/contact"><Footer /></Route>
+          <Route exact path="/projects"><Projects /></Route>
           <Route exact path="/blogs"><Blogs /></Route>
-          <Route exact path="/writeblog"><WriteBlog /></Route>
-          <Route exact path="/github" render={() => (window.location = "https://github.com")} />
+          <Route exact path="/blogs/:slug"><Blog /></Route>
+          <Route exact path="/github" render={() => (window.location = "https://github.com/Balkrishnashah")} />
+          <Route exact path="/linkedin" render={() => (window.location = "https://www.linkedin.com/in/balkrishna-shah-b6378b182/")} />
+          <Route exact path="/insta" render={() => (window.location = "https://www.instagram.com/__alexcrue__/")} />
 
         </Switch>
       </div>
