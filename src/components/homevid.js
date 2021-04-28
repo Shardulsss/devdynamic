@@ -112,8 +112,8 @@ const Homevid = () => {
 
                 <HomeContent>
                 <Collapse in={checked} {...(checked?{timeout:800}:{})}>
-                    <HomeH1>Dynamic Gainers</HomeH1>
-                    <HomeP>para</HomeP>
+                    <HomeH1>DevDynamic</HomeH1>
+                    <HomeP>A new perspective to your business....</HomeP>
                     <HomeBtnWrapper>
                         <ButtonMain to="contact" smooth={true} speed={500} spy={true} exact='true' offset={-80}>Contact Us</ButtonMain>
                     </HomeBtnWrapper>

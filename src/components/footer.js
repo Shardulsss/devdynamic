@@ -55,7 +55,7 @@ const Footer = () => {
                     Contact Us
                 </Typography>
                 <Typography variant="h6" gutterBottom align="center">
-                    Contact Us
+                    We would like to hear from you....
                 </Typography>
             </div>
             <Container maxWidth="sm" className={classes.container}>
@@ -84,7 +84,7 @@ const Footer = () => {
                         </Grid>
                     </Grid>
                     <Grid container spacing={5} xs={12} justify="center" className={classes.brand}>
-                        <Grid item  ><Typography variant="h4">DevDynamics</Typography></Grid>
+                        <Grid item  ><Typography variant="h4">DevDynamic</Typography></Grid>
                     </Grid>
                     
                 </Grid>

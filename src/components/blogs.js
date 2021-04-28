@@ -4,8 +4,10 @@ import {Link} from 'react-router-dom';
 import {Grid, Card, CardMedia, CardContent, Container, Typography, Button} from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core';
+
 import sanityClient from '../sanityclient.js';
 import NavbarMain2 from '../pages/navbarmain2';
+import art from '../video/art.svg';
 
 const useStyles = makeStyles((theme)=>({
     root:{
@@ -30,15 +32,18 @@ const useStyles = makeStyles((theme)=>({
     },
     card:{
         width:245,
-        borderRadius:25
+        borderRadius:25,
+        transition: "transform 0.15s ease-in-out",
+        "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+        
     },
     link:{
         cursor: "pointer",
         textDecoration: "none",
         "&:hover, &:focus": {
             color: "#b84d6d",
-            transform: "scale(1.1)",
-            animation: "ease-in-out"
+            transform: "scale3d(1.05, 1.05, 1)",
+            animation: "ease-in-out",
     
         }
     },
@@ -51,8 +56,13 @@ const useStyles = makeStyles((theme)=>({
     header:{
         display:"flex",
         justifyContent:"space-between"
-    }
-
+    },
+    onhower:{
+        "&hower":{
+            image:art
+        }
+    },
+    
 }))
 
 
@@ -62,7 +72,9 @@ const useStyles = makeStyles((theme)=>({
 const Blogs = () => {
     const classes = useStyles()
     const [post,setPost] = useState(null)
-    
+   
+
+
     const search = ()=>{
         const option=document.getElementById('textinput').value
         
@@ -90,11 +102,14 @@ const Blogs = () => {
                 asset->{_id,url},
                 alt
             }
-        }`).then((data)=>setPost(data)).catch(console.error);
+        }`).then((data)=>{
+            setPost(data)
+        }).catch(console.error);
         
     },[]);
 
-    return (<div>
+    return (
+        <div>
         <NavbarMain2 />
         <div className={classes.outerdiv}>
 
@@ -104,14 +119,17 @@ const Blogs = () => {
             <Typography variant="h4" align="center">
                 The DevDynamic Blogs
             </Typography>
+            
             </Grid>
+            
             <Grid item  xs={12} sm={8}>
-            <div>
-            <TextField id="textinput" label="Search Projects" variant="outlined" size="small" style={{margin:10, height:20}} align="right" />
-            <Button variant="contained" color="primary" className={classes.button} onClick={search} style={{margin:7}}>search</Button>
-            </div>
+                <div>
+                <TextField id="textinput" label="Search Projects" variant="outlined" size="small" style={{margin:10, height:20}} align="right" />
+                <Button variant="contained" color="primary" className={classes.button} onClick={search} style={{margin:7}}>search</Button>
+                </div>
             </Grid>
         </Grid>
+    
         </Container>
             <Container align="center" className={classes.blogContainer}>
                 <Grid container spacing={3} justify="center" className={classes.grid}>
@@ -122,8 +140,10 @@ const Blogs = () => {
                                 <CardMedia component="img"
                                 alt={p.title}
                                 height="140" 
-                                image={p.mainImage.asset.url}
-                                title={p.title}></CardMedia>
+                                image={p.mainImage.asset.url}s
+                                title={p.title}>
+                                
+                                </CardMedia>
                                 <CardContent>
                                     <Typography gutterBottom variant="h4" component="h2" align="left">
                                         {p.title}
@@ -131,7 +151,6 @@ const Blogs = () => {
                                     <Typography gutterBottom variant="h6" color="textSecondary" component="h2" align="left">
                                         by: {p.authorname}
                                     </Typography>
-                                    
                                 </CardContent>
                                 
                             </Link>
@@ -139,6 +158,7 @@ const Blogs = () => {
                     </Grid>
                     )}
                 </Grid>
+                
             </Container>
         </div>
         </div>

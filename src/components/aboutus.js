@@ -18,7 +18,7 @@ const useStyles = makeStyles(()=>({
         justifyContent:'center',
         alignContent: 'center',
         background: '#95a5a6',
-        paddingTop:35
+        paddingTop:75
     },
     
     card: {
@@ -41,6 +41,10 @@ const useStyles = makeStyles(()=>({
         height: 500,
         alignSelf: 'center',
         resizeMode:'contain'
+    },
+
+    font:{
+        fontFamily : 'Tajawal',
     }
 
 }))
@@ -60,11 +64,12 @@ const Aboutus = () => {
                         
 
                         <CardContent className={classes.content}>
-                            <Typography gutterBottom variant="h4" component="h4" align="center">
+                            <Typography className={classes.font} gutterBottom variant="h4" component="h4" align="center">
                                 About Us
                             </Typography>
                             <Typography gutterBottom variant="h5" component="h5" align="center">
-                            They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+                            We are a group of software engineers skilled in design and development of responsive websites, mobile apps and digital graphics. We are here to  utilize our tools to make your ideas come true. We promise to understand your project needs and work hard to complete in shortest span possible. 
+                            We aim to simplify processes and deliver success, consistently!
                             </Typography>
                         </CardContent>
                         

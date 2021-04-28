@@ -27,7 +27,9 @@ const useStyles = makeStyles((theme)=>({
     },
     card:{
         width:245,
-        borderRadius:25
+        borderRadius:25,
+        transition: "transform 0.15s ease-in-out",
+        "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
     },
     link:{
         cursor: "pointer",
@@ -60,6 +62,7 @@ const Projects = () => {
     const [post,setPost] = useState(null)
 
     const search = ()=>{
+        alert(post.length)
         const option=document.getElementById('textinput').value
         
         sanityClient.fetch(`*[_type=="project" && title match "${option}*"]{

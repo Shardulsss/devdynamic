@@ -67,7 +67,8 @@ const AboutusRes = () => {
                                 About Us
                             </Typography>
                             <Typography gutterBottom variant="h6" component="h6" align="center" className={classes.typo}>
-                            They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+                            We are a group of software engineers skilled in design and development of responsive websites, mobile apps and digital graphics. We are here to  utilize our tools to make your ideas come true. We promise to understand your project needs and work hard to complete in shortest span possible. 
+We aim to simplify processes and deliver success, consistently!
                             </Typography>
                         </CardContent>
                         
