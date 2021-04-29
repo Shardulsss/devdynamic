@@ -1,12 +1,31 @@
 import React from 'react'
-import { Button } from 'react-scroll';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 // import video from '../video/data.mp4';
 import databg from '../video/data.jpg'
-import glassbg from '../video/glass.jpg'
 import Collapse from '@material-ui/core/Collapse';
 import {useState, useEffect } from 'react'
 import ButtonMain from './styledcomp/button'
+import {Grid, Container, makeStyles} from '@material-ui/core'
+
+import {SiDjango} from 'react-icons/si';
+import {FaNodeJs} from 'react-icons/fa';
+import {FaReact} from 'react-icons/fa';
+import {SiAndroidstudio} from 'react-icons/si';
+import {SiFlutter} from 'react-icons/si';
+import {SiAdobephotoshop} from 'react-icons/si';
+
+
+const useStyles = makeStyles((theme)=>({
+    iconsclass:{
+        '&:hover':{
+            color: "#b84d6d",
+            transform: "scale3d(1.3, 1.3, 1)",
+            animation: "ease-in-out",
+            transition: 0.5
+        }
+    }
+}))
 
 const HomeContainer = styled.div`
     background: #0c0c0c;
@@ -44,6 +63,8 @@ const Imagebg = styled.img`
     -o-object-fit:cover;
     object-fit: cover;
     background: #232a34;
+    width: 100%;
+    height:100%
 
     
 `
@@ -103,6 +124,8 @@ const Homevid = () => {
         setChecked(!checked)
     }, [])
 
+    const classes=useStyles()
+
     return (
         <div id="header">
             <HomeContainer>
@@ -117,8 +140,45 @@ const Homevid = () => {
                     <HomeBtnWrapper>
                         <ButtonMain to="contact" smooth={true} speed={500} spy={true} exact='true' offset={-80}>Contact Us</ButtonMain>
                     </HomeBtnWrapper>
-                </Collapse>    
+                </Collapse>  
+
+
+                    <Container align="center" style={{justifyContent:"center", marginTop:45}}>
+                        <Grid container spacing={5} justify="center" style={{padding:35}}>
+                            <Grid item>
+                            <Link to="whatwedo" smooth={true} speed={500} spy={true} exact='true' offset={-80}>
+                                <SiDjango size={42} color="white" className={classes.iconsclass}></SiDjango>
+                            </Link>    
+                            </Grid>
+                            <Grid item>
+                                <Link to="whatwedo" smooth={true} speed={500} spy={true} exact='true' offset={-80}>
+                                <FaNodeJs size={42} color="white" className={classes.iconsclass}></FaNodeJs>
+                                </Link>    
+                            </Grid>
+                            <Grid item>
+                            <Link to="whatwedo" smooth={true} speed={500} spy={true} exact='true' offset={-80}>
+                                <FaReact size={42} color="white" className={classes.iconsclass}></FaReact>
+                                </Link>    
+                            </Grid>
+                            <Grid item>
+                            <Link to="whatwedo" smooth={true} speed={500} spy={true} exact='true' offset={-80}>
+                                <SiAndroidstudio size={42} color="white" className={classes.iconsclass}></SiAndroidstudio>
+                                </Link>    
+                            </Grid>
+                            <Grid item>
+                            <Link to="whatwedo" smooth={true} speed={500} spy={true} exact='true' offset={-80}>
+                                <SiFlutter size={42} color="white" className={classes.iconsclass}></SiFlutter>
+                                </Link>
+                            </Grid>
+                            <Grid item>
+                                <Link to="whatwedo" smooth={true} speed={500} spy={true} exact='true' offset={-80}>
+                                <SiAdobephotoshop size={42} color="white" className={classes.iconsclass}></SiAdobephotoshop>
+                                </Link>
+                            </Grid>
+                        </Grid>
+                    </Container> 
                 </HomeContent>
+                
             </HomeContainer>
         </div>
     )

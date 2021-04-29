@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme)=>({
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
         borderRadius:15,
-        height: 300,
+        height: 400,
         width:500,
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
@@ -158,13 +158,17 @@ The Services we provide are
                     timeout: 500,
                     }}
                     >
-        <Fade in={open1}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">Web Application Development</h2>
-            <p id="transition-modal-description">Web Application Development is the future of software for enterprises.Web Application Development software allows organisations to move faster in a dynamic and ever changing environment. Not only this, Web Application Development offers ease of scaling, monitoring, changing and standardising processes within or outside the organisation.</p>
-          </div>
-        </Fade>
-      </Modal>
+                        <Fade in={open1}>
+                        <div className={classes.paper}>
+                            <h2 id="transition-modal-title">Web Application Development</h2>
+                            <p id="transition-modal-description">Web Application Development is the future of software for enterprises.Web Application Development software allows organisations to move faster in a dynamic and ever changing environment. Not only this, Web Application Development offers ease of scaling, monitoring, changing and standardising processes within or outside the organisation.</p>
+                            <br></br>
+                            <p>Technology stack: Frameworks - Django, Node.js, Express.js</p>
+                            <p>Technology stack: Databases - MySql, MongoDB, Sanity, Firebase</p>
+                            <p>Technology stack: Frontend - React.js, Handlebars, ejs, etc</p>
+                        </div>
+                        </Fade>
+                </Modal>
 
       <Modal
         aria-labelledby="transition-modal-title"
@@ -182,6 +186,9 @@ The Services we provide are
         <div className={classes.paper}>
           <h2 id="transition-modal-title">Mobile Application Development</h2>
           <p id="transition-modal-description">Our mobile Application Development services use a creative design processes, deep domain understanding and cutting edge technological resources to ensure that your application deliver the desired outcomes. Benefits of building mobile apps with us include custom mobile app development, cost effective, process driven development, cutting edge technology and highest quality standards.</p>
+          <br></br>
+          <p>Technology stack: Android Studio, React Native, Flutter</p>
+          <p>Technology stack: Databases - MongoDB, Sanity, Firebase</p>
         </div>
       </Fade>
     </Modal>
@@ -205,6 +212,8 @@ The Services we provide are
             <h2 id="transition-modal-title">Graphics Designing And Digital Art</h2>
             <p id="transition-modal-description">Graphics are important factor to make presense of your business. We as artists would like to offer our skills to benifits of your businsess.
             </p>
+            <br></br>
+            <p>Technology stack: Adobe Photoshop, Autodesk Sketchbook</p>
           </div>
         </Fade>
       </Modal>
