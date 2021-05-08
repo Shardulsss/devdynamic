@@ -1,10 +1,9 @@
 import React from 'react'
 import {Typography, Grid, makeStyles, Container, Fade,Slide} from '@material-ui/core';
 
-import PhoneRoundedIcon from '@material-ui/icons/PhoneRounded';
 import {FaGithub,FaInstagram,FaPhoneAlt,FaLinkedin} from 'react-icons/fa'
 import {MdEmail} from 'react-icons/md'
-import biglogo from '../video/biglogo.png';
+import biglogo from '../video/logo.png';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
@@ -65,7 +64,7 @@ const Footer = () => {
                         <Grid item>
                             <MdEmail size={30}/>   
                         </Grid>
-                        <Grid item><h5>devdynamic.tk@gmail.com</h5></Grid>
+                        <Grid item><h5>crimsonez.web@gmail.com</h5></Grid>
                         
                     </Grid>
                     

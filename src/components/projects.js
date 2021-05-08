@@ -94,24 +94,24 @@ const Projects = () => {
         <NavbarMain2 />
         <div className={classes.outerdiv}>
             <Container className={classes.header} align="center">
-            <Grid container >
-                <Grid item xs={12} sm={4}>
-                <Typography variant="h4" align="center">
-                    The DevDynamic Projects
-                </Typography>
+                <Grid container >
+                    <Grid item sm={8} xs={12}>
+                    <Typography variant="h4" align="center">
+                        The DevDynamic Projects
+                    </Typography>
+                    </Grid>
+                    <Grid item  sm={4} xs={12}>
+                        <div style={{display:'flex',justifyContent:'right'}}>
+                        <TextField id="textinput" label="Search Projects" variant="outlined" size="small" style={{margin:10, height:20}} align="right" />
+                        <Button variant="contained" color="primary" className={classes.button} onClick={search} style={{margin:7}}>search</Button>
+                        </div>
+                    </Grid>
                 </Grid>
-                <Grid item  xs={12} sm={8}>
-                <div>
-                <TextField id="textinput" label="Search Projects" variant="outlined" size="small" style={{margin:10, height:20}} align="right" />
-                <Button variant="contained" color="primary" className={classes.button} onClick={search} style={{margin:7}}>search</Button>
-                </div>
-                </Grid>
-            </Grid>
             </Container>
             <Container align="center" className={classes.blogContainer}>
                 <Grid container spacing={3} justify="center" className={classes.grid}>
                 { post && post.map((p,index)=>
-                    <Grid item>
+                    <Grid item key={p.title}>
                         <Card className={classes.card}>
                             
                                 <CardMedia component="img"

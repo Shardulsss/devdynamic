@@ -109,12 +109,7 @@ const Sidebar = (props) => {
                         <Sidebarlink onClick={props.toggle} to="contact">
                             Contact Us
                         </Sidebarlink>
-                        <SidelinkR onClick={props.toggle} to="/projects">
-                            Projects
-                        </SidelinkR>
-                        <SidelinkR onClick={props.toggle} to="/blogs">
-                            Blogs
-                        </SidelinkR>
+                        
                     </Sidebarmenu>
                 </Sidebarwrap>
 

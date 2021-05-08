@@ -83,8 +83,9 @@ const HomeContent = styled.div`
 
 const HomeH1 = styled.h1`
     color: #fff;
-    font-size: 48px;
+    font-size: 50px;
     text-align: center;
+    font-family: 'Bebas Neue', cursive;
     @media screen and (max-width: 768px){
         font-size: 40px;
     }
@@ -135,7 +136,7 @@ const Homevid = () => {
 
                 <HomeContent>
                 <Collapse in={checked} {...(checked?{timeout:800}:{})}>
-                    <HomeH1>DevDynamic</HomeH1>
+                    <HomeH1>CrimsonEz</HomeH1>
                     <HomeP>A new perspective to your business....</HomeP>
                     <HomeBtnWrapper>
                         <ButtonMain to="contact" smooth={true} speed={500} spy={true} exact='true' offset={-80}>Contact Us</ButtonMain>

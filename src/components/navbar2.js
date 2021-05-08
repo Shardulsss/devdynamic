@@ -3,7 +3,7 @@ import {Link as LinkS} from 'react-scroll';
 import styled from 'styled-components';
 import {FaBars} from 'react-icons/fa'
 import { animateScroll as scroll} from 'react-scroll';
-import ddlogo from '../video/ddlogo.png';
+import ddlogo from '../video/logo.png';
 
 const Nav = styled.nav`
     background:#000;

@@ -1,9 +1,10 @@
 import {useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
+import NavbarMain2 from '../pages/navbarmain2';
 import sanityClient from '../sanityclient.js';
 // import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
-import {makeStyles, Typography, Container} from '@material-ui/core';
+import {makeStyles, Typography, Container, Grid} from '@material-ui/core';
 // const builder = imageUrlBuilder(sanityClient);
 // function urlFor(source){
 //     return builder.image(source)
@@ -14,7 +15,8 @@ const useStyles = makeStyles((theme)=>({
         justifyContent:'center',
         alignContent: 'center',
         background: '#95a5a6',
-        padding:35
+        padding:35,
+        width:'100%'
     },
     mainimage:{
         height:300,
@@ -69,19 +71,25 @@ const Blog = () =>{
             
             </div>)
     }
-    return (<div className={classes.outerdiv}>
+    return (<div>
+        <NavbarMain2 />
+        <div className={classes.outerdiv}>
+        
         <br></br>
         <br></br>
 
         <Container justifyContent="center" align="center">
-            
+            <Grid container>
+            <Grid item sm={4} xs={12}>
             <img src={blog.mainImage.asset.url} className={classes.mainimage}></img>
+        </Grid>
+            </Grid>
             <Container justifyContent="center" align="left" className={classes.content}>
                 <div style={{display:"flex", justifyContent:"space-between"}}>
                     <Typography variant="h4" gutterBottom>
                         {blog.title}
                     </Typography>
-                    <Typography variant="h6" align="right" color="textSecondary" gutterBottom>
+                    <Typography variant="p" align="right" color="textSecondary" gutterBottom>
                         author: {blog.authorname}
                     </Typography>
                 </div>
@@ -90,6 +98,7 @@ const Blog = () =>{
             
         </Container>
 
+        </div>
         </div>)
 }
 

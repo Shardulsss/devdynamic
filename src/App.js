@@ -26,9 +26,9 @@ function App() {
           <Route exact path="/projects"><Projects /></Route>
           <Route exact path="/blogs"><Blogs /></Route>
           <Route exact path="/blogs/:slug"><Blog /></Route>
-          <Route exact path="/github" render={() => (window.location = "https://github.com/Balkrishnashah")} />
-          <Route exact path="/linkedin" render={() => (window.location = "https://www.linkedin.com/in/balkrishna-shah-b6378b182/")} />
-          <Route exact path="/insta" render={() => (window.location = "https://www.instagram.com/__alexcrue__/")} />
+          <Route exact path="/github" render={() => (window.location = "https://github.com/Shardulsss")} />
+          <Route exact path="/linkedin" render={() => (window.location = "https://www.linkedin.com/in/shardul-shetye-a4995a1a4/")} />
+          <Route exact path="/insta" render={() => (window.location = "https://www.instagram.com/shetye_shardul/")} />
 
         </Switch>
       </div>

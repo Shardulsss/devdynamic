@@ -53,7 +53,6 @@ const useStyles = makeStyles((theme)=>({
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
         borderRadius:15,
-        height: 400,
         width:500,
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
@@ -106,8 +105,9 @@ const WhatWeDo = ()=>{
                         What We Do ?
                     </Typography>
                     <Typography variant="h6" color="textPrimary" component="p" align='center'>
-                    We are here to simplify lives, improve productivity & consistently enable faster success through building online presense for your local business.
-The Services we provide are
+                    We are a company that can improve your productivity, get you more success & make your lives easier. We do this by building a strong online presence for your local business.
+
+                    The services we provide are:
                     </Typography>
                 </Container>
             
@@ -224,8 +224,7 @@ The Services we provide are
             
             <Container maxWidth="sm">
                 <Typography variant="h6" color="textPrimary" component="p" align='center'>
-                We are here to make this process simpler and cheaper for you.
-                It would be pleasure to work with new projects and understand your concerns.
+                We are here to listen to your concerns and make this process simple and easy for you. It would be a pleasure to work with you on your projects.
                 </Typography>
             </Container>
         

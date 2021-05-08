@@ -3,7 +3,7 @@ import {Link as LinkS} from 'react-scroll';
 import styled from 'styled-components';
 import {FaBars} from 'react-icons/fa'
 import { animateScroll as scroll} from 'react-scroll';
-import ddlogo from '../video/ddlogo.png';
+import ddlogo from '../video/logo.png';
 
 const Nav = styled.nav`
     background:#000;
@@ -162,12 +162,7 @@ const Navbar = (props)=>{
                         <NavItem>
                             <NavLinks to="contact" smooth={true} speed={500} spy={true} exact='true' offset={-80}>Contact Us</NavLinks>
                         </NavItem>
-                        <NavItem>
-                            <NavLinkR to="/projects">Projects</NavLinkR>
-                        </NavItem>
-                        <NavItem>
-                            <NavLinkR to="/blogs">Blogs</NavLinkR>
-                        </NavItem>
+                        
 
                     </NavMenu>
                 </NavbarContainer>
