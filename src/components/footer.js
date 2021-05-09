@@ -83,7 +83,7 @@ const Footer = () => {
                         </Grid>
                     </Grid>
                     <Grid container spacing={5} xs={12} justify="center" className={classes.brand}>
-                        <Grid item  ><Typography variant="h4">DevDynamic</Typography></Grid>
+                        <Grid item  ><Typography variant="h4">CrimsonEz</Typography></Grid>
                     </Grid>
                     
                 </Grid>
