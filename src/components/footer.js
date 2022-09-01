@@ -85,6 +85,9 @@ const Footer = () => {
                     <Grid container spacing={5} xs={12} justify="center" className={classes.brand}>
                         <Grid item  ><Typography variant="h4">CrimsonEz</Typography></Grid>
                     </Grid>
+                    <Grid container spacing={5} xs={12} justify="center" className={classes.brand}>
+                        <Grid item ><p>Piyush Shinde - Shardul Shetye</p></Grid>
+                    </Grid>
                     
                 </Grid>
             </Container>
